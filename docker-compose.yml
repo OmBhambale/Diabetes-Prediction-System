@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: flask-server
+    ports:
+      - "4000:4000"
+    networks:
+      - fullstack-net
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: react-client
+    ports:
+      - "5174:3000"
+    networks:
+      - fullstack-net
+    restart: unless-stopped
+    depends_on:
+      - backend
+
+networks:
+  fullstack-net:
+    driver: bridge
