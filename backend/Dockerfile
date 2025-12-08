@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 4000
 
-CMD ["python", "app.py"]
+CMD ["waitress-serve" ,"--listen=*:4000" ,"app:app"]

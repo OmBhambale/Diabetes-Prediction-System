@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 from flask_cors import CORS
 from flask import jsonify, request
+from waitress import serve
 
 # --- 1. CONFIGURATION AND MODEL LOADING ---
 
